@@ -37,7 +37,7 @@ app.listen(PORT, () => {
 
 // MongoDB Connection
 mongoose
-  .connect("mongodb://127.0.0.1:27017/crud_adv")
+  .connect("mongodb+srv://octaldaksh:octal123@cluster0.5xt6n.mongodb.net/")
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
