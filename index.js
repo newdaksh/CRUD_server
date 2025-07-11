@@ -54,6 +54,11 @@ app.post('/login', async (req, res) => {
 });
 
 
+app.get("/", (req, res) => {
+  res.send("Backend is working!");
+});
+
+
 app.get('/users', async (req, res) => {
   try {
     const users = await User.find();
