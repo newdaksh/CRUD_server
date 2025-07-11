@@ -115,8 +115,8 @@ userSchema.pre('save', function(next)
 });
 
 
-// convert user schema to MongoDB model to use CRUD operations
-const User = mongoose.model('crud_octal', userSchema);
+// convert user schema to MongoDB model to use CRUD operations / database store
+const User = mongoose.model('github', userSchema);
 
 
 // exporting User model to use it anywhere in our project
