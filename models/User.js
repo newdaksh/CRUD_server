@@ -10,24 +10,19 @@ const userSchema = new mongoose.Schema ({
 
     firstName : {
         type: String,
-        required: true,
+        
         trim: true, // removes whitespaces
     },
 
     lastName : {
         type: String,
-        required: true,
-        trim: true,
-    },
-
-    fullName : {
-        type: String,
+       
         trim: true,
     },
 
     email : {
         type: String,
-        required: true,
+       
         trim: true,
         unique: true, // 2 users can not have same email
         lowercase: true,
@@ -36,7 +31,7 @@ const userSchema = new mongoose.Schema ({
 
     mobile: {
         type: String,
-        required: true,
+        
         unique: true,
         trim: true,
         // match: REGEX doubt
@@ -44,7 +39,7 @@ const userSchema = new mongoose.Schema ({
 
     gender: {
         type: String,
-        required: true,
+        
         enum: ["male", "female", "other"], // enum : user defined data types -- in radio box later
     },
 
@@ -55,7 +50,7 @@ const userSchema = new mongoose.Schema ({
 
     country: {
         type: String,
-        required: true,
+        
         enum: ['India', 'USA', 'Canada', 'UK', 'Australia', 'Germany', 'Japan', 'Other']
     },
 
