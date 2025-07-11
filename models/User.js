@@ -1,10 +1,6 @@
 // mongoose import - MongoDB database se interact karne ke liye & to define schema
 import mongoose from 'mongoose';
 
-// bcrypt import - password hash karne ke liye
-
-
-
 // User schema define karna hai
 const userSchema = new mongoose.Schema ({
 
