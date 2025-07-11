@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 
 // bcrypt import - password hash karne ke liye
-import bcrypt from "bcrypt";
+
 
 
 // User schema define karna hai
@@ -67,34 +67,10 @@ const userSchema = new mongoose.Schema ({
 
 
 
-// Hash passwords before saving -- using bcrypt
-
-userSchema.pre('save', async function(next){
-    
-    if (!this.isModified('password')) return next();
-
-    try {
-    // salt generation
-     const salt = await bcrypt.genSalt(10);
-    
-    //
-     this.password = await bcrypt.hash(this.password, salt);
-    } 
-    
-    catch (error) {
-        // Inform mongoose, that to continue save process after checking errors in hashing
-        next(error);    
-    }
-
-});
 
 
-// Method to compare password
 
-userSchema.methods.comparePassword = async function(candidatePassword)
-{
-    return bcrypt.compare(candidatePassword, this.password);
-};
+
 
 
 
